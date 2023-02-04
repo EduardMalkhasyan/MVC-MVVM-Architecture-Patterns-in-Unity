@@ -1,17 +1,20 @@
 using UnityEngine;
 using TMPro;
 
-public class MessageView : MonoBehaviour
+namespace MVC
 {
-    [SerializeField] private TextMeshProUGUI textMesh;
-
-    public void DisplayMessage(string message)
+    public class MessageView : MonoBehaviour
     {
-        textMesh.text = message;
-    }
+        [SerializeField] private TextMeshProUGUI textMesh;
 
-    public void DisplayColor(Color color)
-    {
-        textMesh.color = color;
+        public void DisplayMessage(string message)
+        {
+            textMesh.text = message;
+        }
+
+        public void DisplayColor(Color color)
+        {
+            textMesh.color = color;
+        }
     }
 }

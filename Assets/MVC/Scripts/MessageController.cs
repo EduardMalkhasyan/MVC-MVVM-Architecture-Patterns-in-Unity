@@ -1,36 +1,36 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
-public class MessageController
+namespace MVC
 {
-    private MessageModelSO messageModel;
-    private MessageModelSO[] messageModels;
-    private MessageView messageView;
-
-    public MessageController(MessageModelSO messageModel, MessageView messageView)
+    public class MessageController
     {
-        this.messageModel = messageModel;
-        this.messageView = messageView;
-    }
+        private MessageModelSO messageModel;
+        private MessageModelSO[] messageModels;
+        private MessageView messageView;
 
-    public MessageController(MessageModelSO[] messageModels, MessageView messageView)
-    {
-        this.messageModels = messageModels;
-        this.messageView = messageView;
-    }
+        public MessageController(MessageModelSO messageModel, MessageView messageView)
+        {
+            this.messageModel = messageModel;
+            this.messageView = messageView;
+        }
 
-    public void UpdateDailyMessage()
-    {
-        messageView.DisplayMessage(messageModel.Message);
-        messageView.DisplayColor(messageModel.Color);
-    }
+        public MessageController(MessageModelSO[] messageModels, MessageView messageView)
+        {
+            this.messageModels = messageModels;
+            this.messageView = messageView;
+        }
 
-    public void UpdateRandomMessage()
-    {
-        var randomChose = UnityEngine.Random.Range(0, messageModels.Length);
-        messageView.DisplayMessage(messageModels[randomChose].Message);
-        messageView.DisplayColor(messageModels[randomChose].Color);
+        public void UpdateDailyMessage()
+        {
+            messageView.DisplayMessage(messageModel.Message);
+            messageView.DisplayColor(messageModel.Color);
+        }
+
+        public void UpdateRandomMessage()
+        {
+            var randomChose = UnityEngine.Random.Range(0, messageModels.Length);
+            messageView.DisplayMessage(messageModels[randomChose].Message);
+            messageView.DisplayColor(messageModels[randomChose].Color);
+        }
     }
 }

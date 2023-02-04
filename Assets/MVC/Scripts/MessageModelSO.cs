@@ -1,8 +1,11 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "MessageData", menuName = "ScriptableObjects/MessageData")]
-public class MessageModelSO : ScriptableObject
+namespace MVC
 {
-    [field: SerializeField] public Color Color { get; private set; }
-    [field: SerializeField] public string Message { get; set; }
+    [CreateAssetMenu(fileName = "MessageData", menuName = "ScriptableObjects/MessageData")]
+    public class MessageModelSO : ScriptableObject
+    {
+        [field: SerializeField] public Color Color { get; private set; }
+        [field: SerializeField] public string Message { get; set; }
+    }
 }

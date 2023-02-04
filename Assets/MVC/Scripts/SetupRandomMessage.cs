@@ -1,21 +1,24 @@
 using UnityEngine;
 
-public class SetupRandomMessage : MonoBehaviour
+namespace MVC
 {
-    [SerializeField] private MessageView messageView;
-    [SerializeField] private MessageModelSO[] allMessages;
-
-    private MessageController messageController;
-
-    private void Start()
+    public class SetupRandomMessage : MonoBehaviour
     {
-        allMessages = Resources.LoadAll<MessageModelSO>("MessageDataSO/");
-        messageController = new MessageController(allMessages, messageView);
-        UpdateRandomMessage();
-    }
+        [SerializeField] private MessageView messageView;
+        [SerializeField] private MessageModelSO[] allMessages;
 
-    public void UpdateRandomMessage()
-    {
-        messageController.UpdateRandomMessage();
+        private MessageController messageController;
+
+        private void Start()
+        {
+            allMessages = Resources.LoadAll<MessageModelSO>("MVC/MessageDataSO/");
+            messageController = new MessageController(allMessages, messageView);
+            UpdateRandomMessage();
+        }
+
+        public void UpdateRandomMessage()
+        {
+            messageController.UpdateRandomMessage();
+        }
     }
 }

@@ -1,17 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class SetupDailyMessage : MonoBehaviour
+namespace MVC
 {
-    [SerializeField] private MessageView messageView;
-    [SerializeField] private MessageModelSO dailyMessage;
-
-    private MessageController messageController;
-
-    private void Start()
+    public class SetupDailyMessage : MonoBehaviour
     {
-        messageController = new MessageController(dailyMessage, messageView);
-        messageController.UpdateDailyMessage();
+        [SerializeField] private MessageView messageView;
+        [SerializeField] private MessageModelSO dailyMessage;
+
+        private MessageController messageController;
+
+        private void Start()
+        {
+            messageController = new MessageController(dailyMessage, messageView);
+            messageController.UpdateDailyMessage();
+        }
     }
 }
